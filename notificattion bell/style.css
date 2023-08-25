@@ -1,0 +1,47 @@
+body{
+    background-color: rebeccapurple;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+.fa-bell{
+    font-size: 200px;
+    color: aliceblue;
+}
+.bell-notification{
+    width: 200px;
+    height: 200px;
+    position: relative;
+    display: grid;
+    place-items: center;
+    animation: bell-moving 1s linear  infinite alternate-reverse;
+    /* it is use to decide which one of the portion should fixed */
+    transform-origin: top;    
+}
+
+@keyframes bell-moving {
+    0%{
+       transform: rotate(-20deg);
+    }
+    100%{
+        transform: rotate(20deg);
+    }
+}
+.bell-notification::after{
+    content: attr(current-count);
+    position: absolute;
+    width: 50px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-color: red;
+    top: 20px;
+    right: 20px;
+    border: 4px solid rebeccapurple;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+

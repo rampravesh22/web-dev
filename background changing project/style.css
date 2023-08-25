@@ -1,0 +1,21 @@
+body{
+    display: flex;
+    display: grid;
+    place-items: center;
+    height: 100vh;
+}
+
+button{
+    position: absolute;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    padding: 10px;
+    box-shadow:0 0 5px;
+    border-radius:10px;
+    transition: all .5s;
+
+}
+button:hover{
+    background-color: rgba(220, 217, 217, 0.95);
+}

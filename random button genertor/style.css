@@ -1,0 +1,75 @@
+:root {
+    --color-primary: #2584ff;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    /* 1rem = 10px*/
+    font-size: 62.5%;
+}
+
+.container {
+    margin: 5rem auto;
+    border: 2px solid;
+    padding:4rem 0;
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem 0;
+
+}
+
+.child {
+    /* display: inline-block; */
+    position: relative;
+    /* border:2px solid; */
+    /* width: 200px; */
+    /* height: 100px; */
+}
+
+#btn {
+    z-index: 34;
+    font-family: poppins;
+}
+
+.color-span {
+    /* background-color: red; */
+    opacity: 0;
+    text-align: center;
+    translate: 0 3rem;
+    position: absolute;
+    font-size: 2rem;
+    cursor: pointer;
+    /* z-index: -12; */
+    color: white;
+    left: 25%;
+    transition: all ease-in-out .3s;
+    font-family: "Poppins";
+}
+#btn:hover+.color-span {
+    translate: 0 -1.3rem;
+    opacity: 1;
+    color: black;
+}
+
+
+.btn-style {
+    color: white;
+    padding: 1.2rem 4rem;
+    border-radius: .3rem;
+    text-transform: capitalize;
+    margin: 2rem;
+    box-sizing: border-box;
+    font-size: 2em;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    /* background-color: red; */
+}

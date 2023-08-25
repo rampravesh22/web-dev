@@ -1,0 +1,108 @@
+:root {
+    --color-primary: #2584ff;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html * {
+    font-family: poppins;
+    font-size: 2rem;
+}
+
+html {
+    /* 1rem = 10px*/
+    font-size: 62.5%;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #8cccff;
+
+
+}
+
+.box {
+    position: relative;
+    width: 500px;
+}
+
+.box .input-box {
+    position: relative;
+    width: 100%;
+    background-color: white;
+    padding: 5px;
+    border-radius: 8px;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, .15);
+}
+
+.box .input-box input {
+    position: relative;
+    width: 100%;
+    outline: none;
+    border: none;
+    padding: 10px 5px;
+}
+
+.box .input-box #toggle-btn {
+    right: 10px;
+    top: 14px;
+    position: absolute;
+    width: 34px;
+    height: 34px;
+    background-color: rgba(0, 0, 0, .05);
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box .input-box #toggle-btn::before {
+    content: "\f06e";
+    font-family: fontawesome;
+
+}
+
+.box .input-box #toggle-btn.hide::before {
+    content: "\f070";
+    font-family: fontawesome;
+}
+
+.validation {
+    background-color: #376488;
+    padding: 10px;
+    margin-top: 30px;
+    border-radius: 8px;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
+}
+
+.validation ul {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.validation ul li {
+    position: relative;
+    list-style: none;
+    font-size: .85em;
+    transition: .5s;
+    color: #fff;
+}
+.validation ul li::before{
+    content: "\f192";
+    width: 20px;
+    height: 10px;
+    font-family: fontawesome;
+    display: inline-flex;
+
+}
