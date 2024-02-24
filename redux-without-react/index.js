@@ -24,13 +24,22 @@ const reducer = (state = { amount: 1 }, action) => {
 	}
 };
 // store
-const store = createStore(reducer, applyMiddleware(logger.default));
+const store = createStore(
+	reducer,
+	applyMiddleware(logger.default, thunk.default)
+);
 
 //actions creaters
 const initUser = async (dispatch, getState) => {
 	const { data } = await axios.get("http://localhost:3000/accounts/1");
 	dispatch({ type: init, payload: data.amount });
 };
+
+const getUser = async () => {
+	const res = await axios.get("http://localhost:3000/accounts/1");
+	console.log(res.data);
+};
+
 const increament = () => {
 	return { type: Increament };
 };
@@ -44,3 +53,5 @@ const increamentByAmount = (value) => {
 setInterval(() => {
 	store.dispatch(initUser);
 }, 3000);
+
+getUser();
