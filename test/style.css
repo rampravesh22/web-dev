@@ -1,11 +1,13 @@
-.form-container {
+body {
 	display: flex;
 	justify-content: center;
-	flex-direction: column;
-	align-items: center;
 }
-.list {
+.container {
+	border: 2px solid red;
+	padding: 5px 3rem;
+	font-size: 4rem;
+	border-radius: 0.5rem;
 	display: flex;
-	border: 2px solid yellow;
-	gap: 2rem;
+	justify-content: center;
+	align-items: center;
 }
