@@ -1,6 +1,11 @@
-const btn = document.getElementById("btn");
-const h2 = document.querySelector("h2");
+const person = {
+	name: "ram",
+	age: 24,
+	rollNumber: 345,
+};
 
-btn.addEventListener("click", () => {
-	h2.classList.toggle("text-red-500");
-});
+Object.seal(person);
+person.greet = "clear data";
+Object.freeze(person);
+person.age = 34;
+console.log(person);
