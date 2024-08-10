@@ -40,6 +40,13 @@ app.use(
 app.use(bodyParser.json());
 // Middleware to parse JSON requests
 
+const transporter = nodemailer.createTransport({
+	service: "gmail",
+	auth: {
+		user: process.env.USER_EMAIL,
+		pass: process.env.USER_PASSWORD,
+	},
+});
 // Define a route to handle form submissions
 app.post("/submit-form", async (req, res) => {
 	try {
@@ -60,13 +67,6 @@ app.post("/submit-form", async (req, res) => {
 		await formData.save();
 
 		// Send an email to the user
-		const transporter = nodemailer.createTransport({
-			service: "gmail",
-			auth: {
-				user: process.env.USER_EMAIL,
-				pass: process.env.USER_PASSWORD,
-			},
-		});
 
 		const mailOptions = {
 			from: process.env.FROM_EMAIL,
@@ -87,6 +87,24 @@ app.post("/submit-form", async (req, res) => {
 		console.error(error);
 		res.status(500).json({ error: "Internal server error." });
 	}
+});
+
+app.get("/find-one-data", async (req, res) => {
+	try {
+		const { to, subject, text } = req.body;
+		const mailOptions = {
+			from: "ram@gmail.com",
+			to: to,
+			subject: subject,
+			text: text,
+		};
+		transporter.sendMail(mailOptions, (error, info) => {
+			if (error) {
+				return res.status(500).json({ error: error.toString() });
+			}
+			res.status(200).json({ message: "Email sent!", info });
+		});
+	} catch (error) {}
 });
 
 // Start the server
