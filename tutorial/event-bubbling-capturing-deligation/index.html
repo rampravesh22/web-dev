@@ -6,28 +6,59 @@
 		<title>Javascript</title>
 		<link rel="stylesheet" href="style.css" />
 		<script defer src="./script.js"></script>
-		<!-- <script src="https://cdn.tailwindcss.com"></script> -->
+		<script src="https://cdn.tailwindcss.com"></script>
 		<link rel="stylesheet" href="style.css" />
 	</head>
 	<body>
-		<div
-
-			className="w-[90%] bg-slate-200  border flex justify-center items-center border-black h-[500px] m-auto mt-10"
-		>
+		<!-- <div id="outerMost" class="bg-red-200 relative h-screen mt-0 pt-12">
+			<span class="absolute top-2 left-2">Outer Most</span>
 			<div
-
-				className="bg-blue-400 border flex justify-center items-center  border-black w-[70%] h-[70%] gap-6"
+				id="grandparent"
+				class="w-[90%] relative bg-slate-200 border flex justify-center items-center border-black h-[490px] m-auto"
 			>
+				<span class="absolute text-black top-2 left-3">Grandparent</span>
 				<div
-
-					className="bg-zinc-400 border  border-gray-900 w-[50%] h-[50%]"
-				></div>
-				<button
-
-					className="bg-black text-white px-6 py-2 rounded-md"
+					id="parent"
+					class="bg-blue-400 relative border flex justify-center items-center border-black w-[70%] h-[70%] gap-6"
 				>
-					Button
-				</button>
+					<span class="absolute top-3 left-3">Parent</span>
+					<div
+						id="childDiv"
+						class="bg-zinc-400 p-2 border border-gray-900 w-[40%] h-[30%]"
+					>
+						Child Div
+					</div>
+					<button
+						id="childBtn"
+						class="bg-black text-white px-6 py-2 rounded-md"
+					>
+						Button
+					</button>
+				</div>
 			</div>
-		</div>
+		</div> -->
+
+		<ul id="list" class="p-4 flex gap-10">
+			<li
+				class="bg-blue-600 w-20 text-center cursor-default py-1 text-white rounded-md"
+			>
+				First
+			</li>
+			<li
+				class="bg-blue-600 w-20 text-center cursor-default py-1 text-white rounded-md"
+			>
+				Second
+			</li>
+			<li
+				class="bg-blue-600 w-20 text-center cursor-default py-1 text-white rounded-md"
+			>
+				Third
+			</li>
+			<li
+				class="bg-blue-600 w-20 text-center cursor-default py-1 text-white rounded-md"
+			>
+				Fourth
+			</li>
+		</ul>
+	</body>
 </html>
