@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Javascript</title>
+		<link rel="stylesheet" href="style.css" />
+		<script defer src="./script.js"></script>
+		<!-- <script src="https://cdn.tailwindcss.com"></script> -->
+		<link rel="stylesheet" href="style.css" />
+		<style>
+			.container {
+				display: flex;
+				justify-content: center;
+				margin-top: 1rem;
+			}
+			.input {
+				width: 100%;
+				height: 2rem;
+				font-size: 1.5rem;
+				padding: 0 1rem;
+				border-radius: 1.2rem;
+				color: grey;
+				border: 3px solid rgb(104, 104, 104);
+				outline: none;
+				transition: all ease-in 0.5s;
+				font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+					Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+					sans-serif;
+			}
+			.input:focus {
+				border: 3px dotted rgb(0, 86, 156);
+			}
+			.parent {
+				width: clamp(400px, 80%, 500px);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="parent">
+				<input
+					class="input"
+					autofocus
+					autocomplete="off"
+					type="text"
+					placeholder="search"
+					id="input"
+				/>
+			</div>
+		</div>
+	</body>
+</html>
